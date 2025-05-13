@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Passenger Counter</title>
+  <style>
+    body {
+      font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      text-align: center;
+      padding: 40px;
+      background-color: #d5eefa;
+    }
+    h1 {
+      font-size: 40px;
+    }
+    #count-el {
+      font-size: 60px;
+      margin: 20px 0;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 5px;
+      font-size: 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    #increment-btn {
+      background-color: #4caf50;
+      color: rgb(15, 14, 14);
+    }
+    #save-btn {
+      background-color: #f32160;
+      color: rgb(15, 14, 14);
+    }
+    #save-el {
+      margin-top: 30px;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Passenger Counter</h1>
+  <h2 id="count-el">0</h2>
+  <button id="increment-btn" onclick="increment()">Increment</button>
+  <button id="save-btn" onclick="save()">Save</button>
+  <p id="save-el">Previous entries: </p>
+
+  <script>
+    let count = 0
+    let countEl = document.getElementById("count-el")
+    let saveEl = document.getElementById("save-el")
+
+    function increment() {
+      count += 1
+      countEl.textContent = count
+    }
+
+    function save() {
+      saveEl.textContent += count + " - "
+      count = 0
+      countEl.textContent = count
+    }
+  </script>
+
+</body>
+</html>
